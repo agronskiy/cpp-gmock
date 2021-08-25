@@ -1,0 +1,10 @@
+bazel-bin
+bazel-deepcode
+bazel-genfiles
+bazel-out
+bazel-testlogs
+bazel-gmock
+
+.vscode
+
+.idea

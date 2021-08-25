@@ -4,6 +4,7 @@
 #include <memory>
 
 namespace hl {
+
 class HeavyLifter {
  public:
   // NOTE: requires definition! Destructor can't be pure virtual.
@@ -11,6 +12,10 @@ class HeavyLifter {
 
   // Actual pure virtual interface.
   virtual void DoHeavyLifting() = 0;
+
+  virtual int DoLiftingWithReturn() = 0;
+
+  virtual void DoLiftingWithParameter(int) = 0;
 };
 
 using HeavyLifterPtr = std::unique_ptr<HeavyLifter>;

@@ -8,13 +8,15 @@
 // NOTE: the inner namespace is put under `testing`, just to not pollute the `hl` one.
 namespace hl {
 namespace testing {
+
 // Mock class for HeavyLifter
 class HeavyLifterMock : public HeavyLifter {
  public:
-  virtual ~HeavyLifterMock() = default;
-
   MOCK_METHOD0(DoHeavyLifting, void());
+  MOCK_METHOD0(DoLiftingWithReturn, int());
+  MOCK_METHOD1(DoLiftingWithParameter, void(int));
 };
+
 }  // namespace testing
 }  // namespace hl
 

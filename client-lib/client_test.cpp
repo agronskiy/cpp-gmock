@@ -40,6 +40,17 @@ TEST_F(TestFixture, CheckHeavyLiftingOneCall) {
   obj.RunClientAlgorithm();
 }
 
+TEST_F(TestFixture, CheckHeavyLiftingWithReturn) {
+  ON_CALL(GetMockedObjectFromPtr(heavy_lifter_ptr_), DoLiftingWithReturn())
+      .WillByDefault(Return(-10));  // returns -10
+
+  // Checks that this was called with `(-10) * (-10) == 100`
+  EXPECT_CALL(GetMockedObjectFromPtr(heavy_lifter_ptr_), DoLiftingWithParameter(100)).Times(1);
+
+  Client obj = Client(std::move(heavy_lifter_ptr_));
+  obj.RunClientAlgorithm();
+}
+
 int main(int argc, char** argv) {
   google::InstallFailureSignalHandler();
   testing::InitGoogleMock(&argc, argv);

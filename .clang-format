@@ -1,0 +1,22 @@
+---
+BasedOnStyle: Google
+---
+Language: Cpp
+AlignOperands: true
+AlignAfterOpenBracket: AlwaysBreak
+AllowAllParametersOfDeclarationOnNextLine: true
+BinPackParameters: false
+BinPackArguments: false
+DerivePointerAlignment: false
+PointerAlignment: Left
+ColumnLimit: 100
+---
+Language: JavaScript
+ColumnLimit: 100
+---
+Language: Proto
+ColumnLimit: 100
+---
+Language: TextProto
+ColumnLimit: 100
+---
